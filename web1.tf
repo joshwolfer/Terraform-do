@@ -1,10 +1,10 @@
-resource "digitalocean_droplet" "web" {
+resource "digitalocean_droplet" "web-1" {
   image  = "ubuntu-18-04-x64"
   name   = "web-1"
   region = "sfo1"
   size   = "s-1vcpu-1gb"
 	private_networking = true
-	ssh_key = [ 
+	ssh_keys = [ 
 		"${var.ssh_fingerprint}"
 	]
 	connection {
@@ -15,7 +15,6 @@ resource "digitalocean_droplet" "web" {
 	}
 	provisioner "remote-exec" {
 		inline = [
-			"export PATH=$PATH:/usr/bin",
 			# install nginx
 			"sudo apt-get update",
 			"sudo apt-get -y install nginx"
