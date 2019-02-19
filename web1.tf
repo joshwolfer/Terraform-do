@@ -4,7 +4,7 @@ resource "digitalocean_droplet" "web-1" {
   region = "sfo2"
   size   = "s-1vcpu-1gb"
 	private_networking = true
-	user-data = "${file("config/webuserdata.sh")}"
+	user_data = "${file("config/webuserdata.sh")}"
 	ssh_keys = [ 
 		"${var.ssh_fingerprint}"
 	]
@@ -14,4 +14,4 @@ resource "digitalocean_droplet" "web-1" {
 		private_key = "${file(var.pvt_key)}"
 		timeout = "2m"
 	}
-
+}
