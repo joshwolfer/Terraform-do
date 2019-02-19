@@ -1,7 +1,7 @@
 resource "digitalocean_droplet" "web-1" {
   image  = "ubuntu-18-04-x64"
   name   = "web-1"
-  region = "sfo1"
+  region = "sfo2"
   size   = "s-1vcpu-1gb"
 	private_networking = true
 	ssh_keys = [ 
