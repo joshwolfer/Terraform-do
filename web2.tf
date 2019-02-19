@@ -1,6 +1,6 @@
-resource "digitalocean_droplet" "web-1" {
+resource "digitalocean_droplet" "web-2" {
   image  = "ubuntu-18-04-x64"
-  name   = "web-1"
+  name   = "web-2"
   region = "sfo2"
   size   = "s-1vcpu-1gb"
 	private_networking = true
